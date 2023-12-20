@@ -1,7 +1,8 @@
 # hydra blend
 performed code
 
-[hydrablend.niklausiff.rip]([https://nodejs.org](https://hydrablend.niklausiff.rip/))
+[hydrablend.niklausiff.rip](https://hydrablend.niklausiff.rip/)
+
 
 first install [node.js](https://nodejs.org) and [yarn](https://classic.yarnpkg.com)
 
