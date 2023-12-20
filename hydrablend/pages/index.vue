@@ -4,6 +4,9 @@
       <div class="test-btn" @click="startHydras()">
         <p>start</p>
       </div>
+      <div class="test-btn" @click="destroyRandomHydra()">
+        <p>delete</p>
+      </div>
       <div class="test-btn2" @click="destroyHydras()">
         <p>stop</p>
       </div>
@@ -17,13 +20,28 @@
   let counter = 0
   let w = window.innerWidth
   let h = window.innerHeight
-  let interval = null
+  let hw = 720
+  let hh = 420
+  let intervalID = null
+  let runnging = false
   let colors = [
     'rgb(0,255,0)',
     'rgb(0,0,0)'
   ]
   let sketches = [
-    `s0.initVideo("https://www.moutoncoveweather.com/upload/20231219dayvideo.mp4")
+    `s0.initVideo("102-webcam-video-726578.mp4")
+    src(s0)
+      .luma(0.013)
+      .add(shape(0.164, 0.931)
+        .luma(1.142))
+      .modulate(osc(-1977.88, -0.9)
+        .modulate(osc()
+          .luma()))
+      .blend(o0)
+      .blend(o0)
+      .blend(o0)
+      .out()`,
+      `s0.initVideo("20231219dayvideo.mp4")
     src(s0)
       .luma(0.013)
       .add(shape(0.164, 0.931)
@@ -76,7 +94,7 @@
       `gradient(5).repeat(50,50).kaleid([3,5,7,9].fast(0.5))
       .modulateScale(osc(4,-0.5,0).kaleid(50).scale(0.5),15,0)
       .modulateRotate(osc(12,0).kaleid(100),4).blend(o0,0.4).repeat(2,2)
-      .out(o1)`,
+      .out()`,
       `s0.initVideo("https://media3.giphy.com/media/AMQq7nlQVTzWqBEubW/giphy.mp4")
       src(s0).modulate(voronoi()
         .color(0.9,0.25,0.15)
@@ -117,19 +135,18 @@
           out(o0)`,
       `s0.initVideo("https://media0.giphy.com/media/ccqUwRRof2HMk/giphy.mp4")
       src(s0).brightness( () => Math.sin(time)*2 ).invert([0,1]).modulate(noise(9),0.02)
-        .out(o0`,
+        .out(o0)`,
       `s0.initImage("https://upload.wikimedia.org/wikipedia/commons/2/2b/Pixel-example.png")
       speed = 2
       src(s0).
       invert([0,1,0,0,0,1,1]).
       scale([0.7, 0.4, 1.4],0.4).
       kaleid(10).
-      modulateRepeatY(osc(10), 1.0, ({time}) => Math.sin(time) * 0.2)
-        .scale(2,1,01).
+      modulateRepeatY(osc(10), 1.0, ({time}) => Math.sin(time) * 0.2).
         out(o0)`,
       `s0.initImage("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Satellietschotel_met_monoblock.jpg/1280px-Satellietschotel_met_monoblock.jpg")
       src(s0).
-      sub(osc(10,0.2,1).saturate( () => Math.sin(time) * 0.3 )).
+      sub(osc(10,0.2,1).saturate( () => Math.sin(time) * 0.3 ),0.4).
       rotate( () => time%360 *0.3 ).
       out(o0)`,
       `s0.initVideo("https://media4.giphy.com/media/DYGbtrltNhHVX7xZTk/giphy.mp4")
@@ -149,8 +166,12 @@
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
   function startHydras() {
+    if (intervalID) {
+      clearInterval(intervalID)
+      destroyHydras()
+    } 
     createHydra()
-    interval = setInterval(function () {
+    intervalID = setInterval(function () {
       createHydra()
     }, getRandomInt(5,45)*1000)
   }
@@ -164,16 +185,16 @@
     container.appendChild(canvas)
     container.appendChild(text)
     canvas.id = "hydra"+counter
-    canvas.style.width = '720px'
-    canvas.style.height = '420px'
-    canvas.style.left = getRandomInt(0,w-720)+'px'
-    canvas.style.top = getRandomInt(0,h-420)+'px'
+    canvas.style.width = hw+'px'
+    canvas.style.height = hh+'px'
+    canvas.style.left = getRandomInt(0,w-hw)+'px'
+    canvas.style.top = getRandomInt(0,h-hh)+'px'
     canvas.style.position = 'absolute'
     canvas.style.mixBlendMode = 'difference'
     text.id = "htext"+counter
     text.style.position = 'absolute'
-    text.style.left = getRandomInt(0,w)+'px'
-    text.style.top = getRandomInt(0,h)+'px'
+    text.style.left = getRandomInt(0,w-200)+'px'
+    text.style.top = getRandomInt(0,h-50)+'px'
     text.style.color = colors[getRandomInt(0,1)]
     const hydra = new Hydra({
       canvas: document.getElementById("hydra"+counter),
@@ -182,13 +203,20 @@
     eval(sketches[whichOne])
   }
   function destroyHydras() {
-    clearInterval(interval)
+    clearInterval(intervalID)
     let hydras = document.querySelectorAll('[id^="hydra"]')
     let hTexts = document.querySelectorAll('[id^="htext"]')
     for (let i=0; i<hydras.length; i++) {
       hydras[i].remove()
       hTexts[i].remove()
     }
+  }
+  function destroyRandomHydra() {
+    let hydras = document.querySelectorAll('[id^="hydra"]')
+    let hTexts = document.querySelectorAll('[id^="htext"]')
+    let randomHydra = getRandomInt(0,hydras.length-1)
+    hydras[randomHydra].remove()
+    hTexts[randomHydra].remove()
   }
 </script>
 
