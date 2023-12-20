@@ -117,8 +117,6 @@
           out(o0)`,
       `s0.initVideo("https://media0.giphy.com/media/ccqUwRRof2HMk/giphy.mp4")
       src(s0).brightness( () => Math.sin(time)*2 ).invert([0,1]).modulate(noise(9),0.02)
-
-
         .out(o0`,
       `s0.initImage("https://upload.wikimedia.org/wikipedia/commons/2/2b/Pixel-example.png")
       speed = 2
@@ -128,7 +126,17 @@
       kaleid(10).
       modulateRepeatY(osc(10), 1.0, ({time}) => Math.sin(time) * 0.2)
         .scale(2,1,01).
-        out(o0)`
+        out(o0)`,
+      `s0.initImage("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Satellietschotel_met_monoblock.jpg/1280px-Satellietschotel_met_monoblock.jpg")
+      src(s0).
+      sub(osc(10,0.2,1).saturate( () => Math.sin(time) * 0.3 )).
+      rotate( () => time%360 *0.3 ).
+      out(o0)`,
+      `s0.initVideo("https://media4.giphy.com/media/DYGbtrltNhHVX7xZTk/giphy.mp4")
+      src(s0).repeat(3.0, 3.0, 0.0, 0.0).saturate( () => Math.sin(time) * 20 ).kaleid(0.5).add(shape(4).scale(0.9).blend(voronoi(100,3,5)))
+        .modulateRotate(osc(1,0.5,0).kaleid(50).scale(0.5),15,0)
+        .mult(osc(50,-0.1,8).kaleid(9))
+      .out()`
   ]
   let texts = []
   for (let i=0; i<sketches.length; i++) {

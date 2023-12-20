@@ -13,7 +13,9 @@ export default defineNuxtConfig({
     '~/assets/css/main.scss',
   ],
   vite: {
-    define: { global: 'window' },
+    define: {
+      'window.global': {}
+    }
   },
   ssr: false,
 })
