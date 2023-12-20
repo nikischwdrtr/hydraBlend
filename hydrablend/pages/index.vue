@@ -114,7 +114,21 @@
         contrast([3, -6, -1.5, 2, 4] , 0.15).
         posterize( [5, 30, 10, 1, 50] , 1 ).
         scale([3, -6, -1.5, 2, 0.5, -20],0.4).
-          out(o0)`
+          out(o0)`,
+      `s0.initVideo("https://media0.giphy.com/media/ccqUwRRof2HMk/giphy.mp4")
+      src(s0).brightness( () => Math.sin(time)*2 ).invert([0,1]).modulate(noise(9),0.02)
+
+
+        .out(o0`,
+      `s0.initImage("https://upload.wikimedia.org/wikipedia/commons/2/2b/Pixel-example.png")
+      speed = 2
+      src(s0).
+      invert([0,1,0,0,0,1,1]).
+      scale([0.7, 0.4, 1.4],0.4).
+      kaleid(10).
+      modulateRepeatY(osc(10), 1.0, ({time}) => Math.sin(time) * 0.2)
+        .scale(2,1,01).
+        out(o0)`
   ]
   let texts = []
   for (let i=0; i<sketches.length; i++) {
