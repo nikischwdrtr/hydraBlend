@@ -4,6 +4,9 @@
       <div class="test-btn" @click="startHydras()">
         <p>start</p>
       </div>
+      <div class="test-btn" @click="addHydra()">
+        <p>add</p>
+      </div>
       <div class="test-btn" @click="destroyRandomHydra()">
         <p>delete</p>
       </div>
@@ -17,6 +20,7 @@
 <script setup>
   console.log('♕ group 2 ♕')
   import Hydra from 'hydra-synth'
+  import * as Tone from 'tone'
   let counter = 0
   let w = window.innerWidth
   let h = window.innerHeight
@@ -24,6 +28,26 @@
   let hh = 420
   let intervalID = null
   let runnging = false
+  const synth1 = new Tone.Synth({
+    oscillator: {
+      type: 'triangle'
+    },
+    envelope: {
+      attack: 0.5,
+      decay: 0.1,
+      sustain: 0.3,
+      release: 1
+    }
+  }).toDestination()
+  let rev = new Tone.Reverb(7).toDestination()
+  let dist = new Tone.Distortion(1).toDestination()
+  const synthNew = new Tone.Synth().toDestination()
+  const synthDel = new Tone.Synth().toDestination()
+  synthNew.connect(rev)
+  synthDel.connect(dist)
+  const loop = new Tone.Loop((time) => {
+    synth1.triggerAttackRelease('C2', '1n', time)
+  }, '3n')
   let colors = [
     'rgb(0,255,0)',
     'rgb(0,0,0)'
@@ -166,6 +190,8 @@
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
   function startHydras() {
+    startSound()
+    ambient()
     if (intervalID) {
       clearInterval(intervalID)
       destroyHydras()
@@ -173,6 +199,7 @@
     createHydra()
     intervalID = setInterval(function () {
       createHydra()
+      startSound()
     }, getRandomInt(5,45)*1000)
   }
   function createHydra() {
@@ -202,7 +229,21 @@
     })
     eval(sketches[whichOne])
   }
+  function addHydra() {
+    createHydra()
+    addHydraSound()
+  }
+  function destroyRandomHydra() {
+    destroyRandomSound()
+    let hydras = document.querySelectorAll('[id^="hydra"]')
+    let hTexts = document.querySelectorAll('[id^="htext"]')
+    let randomHydra = getRandomInt(0,hydras.length-1)
+    hydras[randomHydra].remove()
+    hTexts[randomHydra].remove()
+  }
   function destroyHydras() {
+    destroyHydrasSound()
+    loop.stop()
     clearInterval(intervalID)
     let hydras = document.querySelectorAll('[id^="hydra"]')
     let hTexts = document.querySelectorAll('[id^="htext"]')
@@ -211,12 +252,21 @@
       hTexts[i].remove()
     }
   }
-  function destroyRandomHydra() {
-    let hydras = document.querySelectorAll('[id^="hydra"]')
-    let hTexts = document.querySelectorAll('[id^="htext"]')
-    let randomHydra = getRandomInt(0,hydras.length-1)
-    hydras[randomHydra].remove()
-    hTexts[randomHydra].remove()
+  function ambient() {
+    loop.start(0)
+    Tone.Transport.start()
+  }
+  function startSound() {
+    synthNew.triggerAttackRelease("C4", "8n")
+  }
+  function addHydraSound() {
+    synthNew.triggerAttackRelease("C5", "8n")
+  }
+  function destroyRandomSound() {
+    synthDel.triggerAttackRelease("E3", "8n")
+  }
+  function destroyHydrasSound() {
+    synthDel.triggerAttackRelease("C3", "8n")
   }
 </script>
 
@@ -239,6 +289,9 @@
   border-radius: 20px;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   &:hover {
 		cursor: pointer;
 		color: rgb(0,255,0);
@@ -249,6 +302,9 @@
   border-radius: 20px;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   &:hover {
 		cursor: pointer;
 		color: rgb(255,0,0);
