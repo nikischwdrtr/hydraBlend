@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'hydrablend',
+      title: 'observation; blend',
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/icon.png' }
       ],
