@@ -19,3 +19,8 @@ first install [node.js](https://nodejs.org) and [yarn](https://classic.yarnpkg.c
 1. cd hydrablend
 2. yarn install
 3. yarn dev
+
+# credits
+
+the whole project was initiated at the module «Performing Code{s}» by joana chicau at hslu lucerne. 
+niklaus iff in collaboration with nicolas gigon and yangtso koondhor.
