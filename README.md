@@ -1,6 +1,6 @@
 # observation; blend
 
-«observation; blend» is an exploration of observation, found footage, browsing the internet, and the experience of getting lost and overwhelmed. it unfolds as a performance, enacted by both you and the computer. the performance has no predetermined timeline; it commences at your discretion and concludes when you decide. it can be interacted with using specific buttons.
+«observation; blend» is an exploration of observation, found footage, browsing the internet, and the experience of getting lost and overwhelmed. it unfolds as a performance, enacted by both you and the computer. the performance has no predetermined timeline; it commences at your discretion and concludes when you decide and can be interacted with using specific buttons.
 
 at the beginning, a randomly selected hydra sketch will appear on the screen at a random location, accompanied by its code presented as text. additional hydra sketches will emerge at specific times, determined by the computer. at any point, you can add a randomly chosen new sketch or remove a randomly chosen existing one. this creates a collaborative or competitive performance between you and the computer.
 
