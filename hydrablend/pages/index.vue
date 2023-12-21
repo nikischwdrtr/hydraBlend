@@ -53,7 +53,8 @@
     'rgb(0,0,0)'
   ]
   let sketches = [
-    `s0.initVideo("102-webcam-video-726578.mp4")
+    `//i have something to say, but not at this time.
+    s0.initVideo("102-webcam-video-726578.mp4")
     src(s0)
       .luma(0.013)
       .add(shape(0.164, 0.931)
@@ -65,7 +66,8 @@
       .blend(o0)
       .blend(o0)
       .out()`,
-      `s0.initVideo("20231219dayvideo.mp4")
+      `//good people are always so sure they're right.
+      s0.initVideo("20231219dayvideo.mp4")
     src(s0)
       .luma(0.013)
       .add(shape(0.164, 0.931)
@@ -77,7 +79,8 @@
       .blend(o0)
       .blend(o0)
       .out()`,
-      `s0.initVideo("https://static.videezy.com/system/resources/previews/000/038/566/original/alb_angel0104_1080p.mp4")
+      `//i'd rather be fishing.
+      s0.initVideo("https://static.videezy.com/system/resources/previews/000/038/566/original/alb_angel0104_1080p.mp4")
       src(s0).invert().rotate(10).
       sub(osc(1, 0.8, 0.3).rotate(30)).
       repeatY(2, 0.0).
@@ -95,13 +98,15 @@
       add(o2).
       out(o3)
       render(o3)`,
-      `s0.initVideo("https://static.videezy.com/system/resources/previews/000/043/457/original/00005.mp4")
+      `//you may say i'm a dreamer, but i'm not the only one. i hope someday you'll join us. and the world will live as one.
+      s0.initVideo("https://static.videezy.com/system/resources/previews/000/043/457/original/00005.mp4")
       src(s0).rotate(0).modulateScale(osc(1,-1,0.6).kaleid(10).scale(1),10,0.2)
       .invert(0.55)
       .modulateHue(src(o0).scale(1.01),1)
         .sub(osc(4,1,0).mask(shape(3,0.3,0.1)))
       .out(o0)`,
-      `s0.initVideo("https://i.imgur.com/zgXHFNg.mp4")
+      `//you're a dream. like everything else.
+      s0.initVideo("https://i.imgur.com/zgXHFNg.mp4")
       src(s0).invert().rotate(10).
       sub(osc(4, 0.6, 0.4).rotate(30)).
       repeatY(2, 0.0).
@@ -114,12 +119,14 @@
       scrollY(1,0.05).
         out(o1)
       render(o1)`,
-      `osc(5,0.3,2).kaleid(4).out()`,
+      `//give me just enough information so that i can lie convincingly.
+      osc(5,0.3,2).kaleid(4).out()`,
       `gradient(5).repeat(50,50).kaleid([3,5,7,9].fast(0.5))
       .modulateScale(osc(4,-0.5,0).kaleid(50).scale(0.5),15,0)
       .modulateRotate(osc(12,0).kaleid(100),4).blend(o0,0.4).repeat(2,2)
       .out()`,
-      `s0.initVideo("https://media3.giphy.com/media/AMQq7nlQVTzWqBEubW/giphy.mp4")
+      `//look up, always. look back, never.
+      s0.initVideo("https://media3.giphy.com/media/AMQq7nlQVTzWqBEubW/giphy.mp4")
       src(s0).modulate(voronoi()
         .color(0.9,0.25,0.15)
         .rotate(({time})=>(time%360)/2)
@@ -133,34 +140,40 @@
                     0.5))
 
         .out(o0)`,
-        `s0.initVideo("https://static.videezy.com/system/resources/previews/000/004/299/original/23.mp4")
+        `//the best things happen by chance.
+        s0.initVideo("https://static.videezy.com/system/resources/previews/000/004/299/original/23.mp4")
         src(s0).
         pixelate(200,100).
         scrollX([0,1,0.1,0.3,7].fit(-0.7,0.5)).
         scrollY([0,1,0.1,0.3,7].fit(-0.7,0.5)).
         invert(0.2).
           out(o0)`,
-          `s0.initImage("https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Sch%C3%B6nb%C3%BChlring_in_Luzern.jpg/2560px-Sch%C3%B6nb%C3%BChlring_in_Luzern.jpg")
+          `//kindness, motherfucker, kindness.
+          s0.initImage("https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Sch%C3%B6nb%C3%BChlring_in_Luzern.jpg/2560px-Sch%C3%B6nb%C3%BChlring_in_Luzern.jpg")
           src(s0).rotate((()=>Math.sin(time)*1)).blend(shape(9,0.8)
             .mult(osc(2,5,7))
             .modulateRepeat(osc(100), 2, 2, 0.5, 0.5))
             .out(o0)`,
-        `s0.initVideo("https://static.videezy.com/system/resources/previews/000/005/825/original/Images_de_recurs_documentaci%C3%B3.mp4")
+        `//if you fall, i'll be the there.
+        s0.initVideo("https://static.videezy.com/system/resources/previews/000/005/825/original/Images_de_recurs_documentaci%C3%B3.mp4")
         src(s0).
         repeatX(2.0, 4).
         contrast([3, -6, -1.5, 2] , 0.15).
         posterize( [5, 30, 10, 1, 50] , 1 ).
           out(o0)`,
-        `s0.initImage("https://upload.wikimedia.org/wikipedia/commons/9/91/Liaison_covalante_oxyg%C3%A8ne11.gif")
+        `//you never really know, but when they know, you'll know, you know?
+        s0.initImage("https://upload.wikimedia.org/wikipedia/commons/9/91/Liaison_covalante_oxyg%C3%A8ne11.gif")
         src(s0).
         contrast([3, -6, -1.5, 2, 4] , 0.15).
         posterize( [5, 30, 10, 1, 50] , 1 ).
         scale([3, -6, -1.5, 2, 0.5, -20],0.4).
           out(o0)`,
-      `s0.initVideo("https://media0.giphy.com/media/ccqUwRRof2HMk/giphy.mp4")
+      `//just keep swimming.
+      s0.initVideo("https://media0.giphy.com/media/ccqUwRRof2HMk/giphy.mp4")
       src(s0).brightness( () => Math.sin(time)*2 ).invert([0,1]).modulate(noise(9),0.02)
         .out(o0)`,
-      `s0.initImage("https://upload.wikimedia.org/wikipedia/commons/2/2b/Pixel-example.png")
+      `//i can do this.
+      s0.initImage("https://upload.wikimedia.org/wikipedia/commons/2/2b/Pixel-example.png")
       speed = 2
       src(s0).
       invert([0,1,0,0,0,1,1]).
@@ -168,12 +181,14 @@
       kaleid(10).
       modulateRepeatY(osc(10), 1.0, ({time}) => Math.sin(time) * 0.2).
         out(o0)`,
-      `s0.initImage("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Satellietschotel_met_monoblock.jpg/1280px-Satellietschotel_met_monoblock.jpg")
+      `//believe nothing you hear, and only one half that you see.
+      s0.initImage("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Satellietschotel_met_monoblock.jpg/1280px-Satellietschotel_met_monoblock.jpg")
       src(s0).
       sub(osc(10,0.2,1).saturate( () => Math.sin(time) * 0.3 ),0.4).
       rotate( () => time%360 *0.3 ).
       out(o0)`,
-      `s0.initVideo("https://media4.giphy.com/media/DYGbtrltNhHVX7xZTk/giphy.mp4")
+      `//i wish we had rocket launchers.
+      s0.initVideo("https://media4.giphy.com/media/DYGbtrltNhHVX7xZTk/giphy.mp4")
       src(s0).repeat(3.0, 3.0, 0.0, 0.0).saturate( () => Math.sin(time) * 20 ).kaleid(0.5).add(shape(4).scale(0.9).blend(voronoi(100,3,5)))
         .modulateRotate(osc(1,0.5,0).kaleid(50).scale(0.5),15,0)
         .mult(osc(50,-0.1,8).kaleid(9))
