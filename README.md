@@ -4,9 +4,9 @@
 
 at the beginning, a randomly selected hydra sketch will appear on the screen at a random location, accompanied by its code presented as text. additional hydra sketches will emerge at specific times, determined by the computer. at any point, you can add a randomly chosen new sketch or remove a randomly chosen existing one. this creates a collaborative or competitive performance between you and the computer.
 
-the entire performance, from initiation to conclusion, is accompanied by sound generated from code. as a result, every interaction, whether initiated by you or the computer, is not only visible but also audible.
-
 the code deliberately acts with randomness to create a kind of humanization in the collaboration with the user. in addition, the randomness refers to the unexpected and the arbitrariness of browsing the internet. any random events are specifically selected, a kind of controlled chaos. in addition, the randomness offers a constantly new dramaturgy of the storyline in the performance, where the narrative remains the same.
+
+the entire performance, from initiation to conclusion, is accompanied by sound generated from code. as a result, every interaction, whether initiated by you or the computer, is not only visible but also audible.
 
 [hydrablend.niklausiff.rip](https://hydrablend.niklausiff.rip/)
 
