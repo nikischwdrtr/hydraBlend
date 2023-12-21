@@ -10,7 +10,7 @@ the entire performance, from initiation to conclusion, is accompanied by sound g
 
 [hydrablend.niklausiff.rip](https://observationblend.niklausiff.rip/)
 
-[demo video](vimeo.com/user133165383/)
+[demo video](https://vimeo.com/user133165383/)
 
 <img width="1784" alt="Screenshot 2023-12-20 at 14 11 58" src="https://github.com/nikischwdrtr/hydraBlend/assets/40233850/de61dd45-f95a-4aa8-9ed4-922ab99c7077">
 
