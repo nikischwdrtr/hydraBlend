@@ -116,7 +116,7 @@
         scrollY([0,1,0.1,0.3,7].fit(-0.7,0.5)).
         invert(0.2).
           out(o0)`,
-          `s0.initVideo("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3hvYmt6YXZ3MTFjNG5mN2hpZzhnMzd0NHhvMjRwMHN6b3V6OHhkdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Dh5q0sShxgp13DwrvG/giphy.mp4")
+          `s0.initVideo("https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Sch%C3%B6nb%C3%BChlring_in_Luzern.jpg/2560px-Sch%C3%B6nb%C3%BChlring_in_Luzern.jpg")
           src(s0).rotate((()=>Math.sin(time)*1)).blend(shape(9,0.8)
             .mult(osc(2,5,7))
             .modulateRepeat(osc(100), 2, 2, 0.5, 0.5))
