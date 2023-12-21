@@ -140,7 +140,7 @@
         scrollY([0,1,0.1,0.3,7].fit(-0.7,0.5)).
         invert(0.2).
           out(o0)`,
-          `s0.initVideo("https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Sch%C3%B6nb%C3%BChlring_in_Luzern.jpg/2560px-Sch%C3%B6nb%C3%BChlring_in_Luzern.jpg")
+          `s0.initImage("https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Sch%C3%B6nb%C3%BChlring_in_Luzern.jpg/2560px-Sch%C3%B6nb%C3%BChlring_in_Luzern.jpg")
           src(s0).rotate((()=>Math.sin(time)*1)).blend(shape(9,0.8)
             .mult(osc(2,5,7))
             .modulateRepeat(osc(100), 2, 2, 0.5, 0.5))
