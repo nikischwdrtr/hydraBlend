@@ -18,9 +18,10 @@ the entire performance, from initiation to conclusion, is accompanied by sound g
 
 first install [node.js](https://nodejs.org) and [yarn](https://classic.yarnpkg.com)
 
-1. cd hydrablend
-2. yarn install
-3. yarn dev
+1. clone repository
+2. cd hydrablend
+3. yarn install
+4. yarn dev
 
 # credits
 
