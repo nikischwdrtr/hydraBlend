@@ -121,7 +121,8 @@
       render(o1)`,
       `//give me just enough information so that i can lie convincingly.
       osc(5,0.3,2).kaleid(4).out()`,
-      `gradient(5).repeat(50,50).kaleid([3,5,7,9].fast(0.5))
+      `//there is no point in sparing me.
+      gradient(5).repeat(50,50).kaleid([3,5,7,9].fast(0.5))
       .modulateScale(osc(4,-0.5,0).kaleid(50).scale(0.5),15,0)
       .modulateRotate(osc(12,0).kaleid(100),4).blend(o0,0.4).repeat(2,2)
       .out()`,
