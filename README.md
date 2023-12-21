@@ -8,7 +8,7 @@ the code deliberately acts with randomness to create a kind of humanization in t
 
 the entire performance, from initiation to conclusion, is accompanied by sound generated from code. as a result, every interaction, whether initiated by you or the computer, is not only visible but also audible.
 
-[hydrablend.niklausiff.rip](https://hydrablend.niklausiff.rip/)
+[hydrablend.niklausiff.rip](https://observationblend.niklausiff.rip/)
 
 <img width="1784" alt="Screenshot 2023-12-20 at 14 11 58" src="https://github.com/nikischwdrtr/hydraBlend/assets/40233850/de61dd45-f95a-4aa8-9ed4-922ab99c7077">
 
